@@ -3,16 +3,18 @@ import cv2
 def draw_patrick_shapes(img):
     process_img = img.copy()
 
-    cv2.circle(process_img,(400,60),8,(0,0,255),-1)
-    cv2.line(process_img,(120,400),(520,420),(0,255,0),3)
-    cv2.rectangle(process_img,(250,280),(430,400),(255,0,0),-1)
-    cv2.circle(process_img,(310,200),40,(0,255,255),2)
-    cv2.rectangle(process_img,(400,160),(470,240),(255,0,255),2)
+    #图像绘制
+    cv2.circle(process_img,(350,60),37,(0,0,255),-1)
+    cv2.line(process_img,(70,300),(570,340),(0,255,0),3)
+    cv2.rectangle(process_img,(160,340),(390,490),(255,0,0),-1)
+    cv2.circle(process_img,(265,260),40,(0,255,255),3)
+    cv2.rectangle(process_img,(305,305),(360,225),(255,0,255),3)
 
-    # cv2.imshow("Resize_black.jpg",resized)
-    # cv2.waitKey(0)
-    # cv2.destoryALLWindows()
     cv2.imwrite("output/drawn_patrick.jpg",process_img)
+    
+    # cv2.imshow("drawn_patrick.jpg",process_img)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
     
 
 if __name__ == "__main__":
@@ -22,4 +24,6 @@ if __name__ == "__main__":
         print("❌ 读取失败，请检查路径是否正确")
     else:
         draw_patrick_shapes(img)
+        print(img.shape)
         print("✅ 操作成功，绘制结果已保存")
+       
